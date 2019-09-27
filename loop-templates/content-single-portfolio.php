@@ -53,11 +53,11 @@ defined( 'ABSPATH' ) || exit;
   </div>
 </div>
 <!--end bio modal-->
-
-	<div class="entry-content">
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bio-modal">
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bio-modal">
                 See Bio Snapshot
          </button>
+	<div class="entry-content" id="content-<?php echo the_ID();?>">
+		<div id="envs-post-data"></div>
 
 		<?php the_content(); ?>
 
