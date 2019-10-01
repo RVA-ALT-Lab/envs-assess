@@ -22,8 +22,8 @@ function envsBasicContent(){
          let minor = assessArrayData(data.envs.minors,'Minor');
          let postCount = data.post_count;
          let pageCount = data.page_count.publish;
-         let created = data.created;
-         let lastUpdate = data.last_updated;
+         let created = data.created.substring(0,10);
+         let lastUpdate = data.last_updated.substring(0,10);
 		 
 		 //get destinations
 		 let nameDestination = document.getElementById('bioModalLabel');
@@ -470,19 +470,15 @@ envsAssessPosts()
 function envsAssessPosts(){
 	//wp-json/wp/v2/comments?post=5198	
 	let url = port.url+'/wp-json/wp/v2/posts';
-
+	 jQuery(".spinner-image").show();
 	  jQuery.get( url, function( data ) {
        data.forEach(function(post){
-       		console.log(post)
        		jQuery('#envs-post-data').append(envsPostTitle(post));
-       		const text = post.content.rendered
-       		
-			Countable.count(text, counter => envsCounterStats(counter))
-						
+       		const text = post.content.rendered       		
+			Countable.count(text, counter => envsCounterStats(counter))						
        })
-       }, 
+       },
     "json" );
-	
 }
 
 

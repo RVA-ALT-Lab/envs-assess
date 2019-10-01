@@ -57,7 +57,9 @@ defined( 'ABSPATH' ) || exit;
                 See Bio Snapshot
          </button>
 	<div class="entry-content" id="content-<?php echo the_ID();?>">
-		<div id="envs-post-data"></div>
+		<div class="spinner-image">Loading . . . </div>
+		<div id="envs-post-data">			
+		</div>
 
 		<?php the_content(); ?>
 
