@@ -14,12 +14,7 @@ defined( 'ABSPATH' ) || exit;
 	<header class="entry-header">
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-
-			<?php understrap_posted_on(); ?>
-
-		</div><!-- .entry-meta -->
+	
 
 	</header><!-- .entry-header -->
 
@@ -28,6 +23,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 		
 		<?php the_content(); ?>
+		<div id="to-eval"></div>
 
 		<?php
 		wp_link_pages(

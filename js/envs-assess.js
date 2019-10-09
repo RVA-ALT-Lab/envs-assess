@@ -485,7 +485,7 @@ function envsAssessPosts(){
 function envsPostTitle(post){
 	let title = post.title.rendered;
 	let link = post.guid.rendered;
-	return `<h2><a href="${link}">${title}</a>`;
+	return `<h2><a href="${link}">${title}</a></h2><a class="rubric-button" href="http://192.168.33.10/wordpress/envs-assess/rubric-one/?assess-source=${link}">Rubric 1</a><a class="rubric-button" href="http://192.168.33.10/wordpress/envs-assess/rubric-two/?assess-source=${link}">Rubric 2</a>`;
 }
 
 function envsCounterStats(counter){

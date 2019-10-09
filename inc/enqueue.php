@@ -36,6 +36,14 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 			    'url' => $port_url,
 			));
 		}
+		if(get_page_template_slug($post->ID)== 'page-templates/right-sidebarpage-assessment.php'){		
+			wp_enqueue_script( 'envs-assess-item', get_template_directory_uri() . '/js/envs-assess-item.js', array(), '1', true );
+			// $port_url = get_field('portfolio_url', $post->ID);
+			// wp_localize_script('envs-assess', 'port', array(
+			//     'url' => $port_url,
+			// ));
+		}
+
 	}
 } // endif function_exists( 'understrap_scripts' ).
 

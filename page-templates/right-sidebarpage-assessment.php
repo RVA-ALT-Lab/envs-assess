@@ -24,6 +24,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				class="<?php if ( is_active_sidebar( 'right-sidebar' ) ) : ?>col-md-8<?php else : ?>col-md-12<?php endif; ?> content-area"
 				id="primary">
 
+
 				<main class="site-main" id="main" role="main">
 
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -43,7 +44,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			</div><!-- #primary -->
 
-			<?php get_template_part( 'sidebar-templates/sidebar', 'right' ); ?>
+			<?php get_template_part( 'sidebar-templates/sidebar', 'assess' ); ?>
 
 		</div><!-- .row -->
 
