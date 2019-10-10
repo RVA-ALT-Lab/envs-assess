@@ -7,7 +7,8 @@ var postcss = require('gulp-postcss');
 var watch = require('gulp-watch');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify-es').default;
+
 var imagemin = require('gulp-imagemin');
 var ignore = require('gulp-ignore');
 var rimraf = require('gulp-rimraf');
@@ -18,6 +19,8 @@ var cleanCSS = require('gulp-clean-css');
 var gulpSequence = require('gulp-sequence');
 var replace = require('gulp-replace');
 var autoprefixer = require('autoprefixer');
+var webpackStream = require('webpack-stream')
+var webpack = require('webpack')
 
 // Configuration file to keep your code DRY
 var cfg = require('./gulpconfig.json');
@@ -50,16 +53,7 @@ gulp.task('sass', function() {
 // Starts watcher. Watcher runs gulp sass task on changes
 gulp.task('watch', function() {
 	gulp.watch(`${paths.sass}/**/*.scss`, gulp.series('styles'));
-	gulp.watch(
-		[
-			`${paths.dev}/js/**/*.js`,
-			'js/**/*.js',
-			'!js/theme.js',
-			'!js/theme.min.js'
-		],
-		gulp.series('scripts')
-	);
-
+	gulp.watch(`${paths.dev}/js/**/*.js`,gulp.series('scripts'));
 	//Inside the watch task.
 	gulp.watch(`${paths.imgsrc}/**`, gulp.series('imagemin-watch'));
 });
@@ -156,7 +150,7 @@ gulp.task('scripts', function() {
 
 		// Adding currently empty javascript file to add on for your own themes´ customizations
 		// Please add any customizations to this .js file only!
-		`${paths.dev}/js/custom-javascript.js`
+		// `${paths.dev}/js/envs-assess.js`
 	];
 	gulp
 		.src(scripts, { allowEmpty: true })
@@ -164,9 +158,17 @@ gulp.task('scripts', function() {
 			{
 				presets: ['@babel/preset-env']
 			}
-		))
-		.pipe(concat('theme.min.js'))
-		.pipe(uglify())
+    ))
+    .pipe(webpackStream({
+      entry:{
+        app: `${paths.dev}/js/envs-assess.js`
+      },
+      output: {
+        filename:'[name].js'
+      }
+    }), webpack, function(err, stats){})
+		// .pipe(concat('theme.min.js'))
+		// .pipe(uglify())
 		.pipe(gulp.dest(paths.js));
 
 	return gulp
