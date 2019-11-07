@@ -6,6 +6,7 @@ module.exports = {
   entry:{
     app: `${paths.dev}/js/main.js`
   },
+  mode: "development",
   output: {
     filename:'[name].js'
   },
