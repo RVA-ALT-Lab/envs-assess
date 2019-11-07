@@ -32,8 +32,8 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		if($post->post_type == 'portfolio'){
 			wp_enqueue_script( 'envs-assess', get_template_directory_uri() . '/js/app.js', array(), '1', true );
 			$port_url = get_field('portfolio_url', $post->ID);
-			wp_localize_script('envs-assess', 'port', array(
-			    'url' => $port_url,
+			wp_localize_script('envs-assess', 'PORTFOLIO_ASSESSMENT', array(
+			    'URL' => $port_url,
 			));
 		}
 		if(get_page_template_slug($post->ID)== 'page-templates/right-sidebarpage-assessment.php'){

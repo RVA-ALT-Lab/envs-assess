@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>		
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<div class="entry-meta">
 
 			<?php understrap_posted_on(); ?>
@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">X</span>
         </button>
-       
+
       </div>
       <div class="modal-body">
       	<img id="stu-photo" src="" alt="Student biography image.">
@@ -55,10 +55,10 @@ defined( 'ABSPATH' ) || exit;
 <!--end bio modal-->
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bio-modal">
                 See Bio Snapshot
-         </button>
+  </button>
 	<div class="entry-content" id="content-<?php echo the_ID();?>">
 		<div class="spinner-image">Loading . . . </div>
-		<div id="envs-post-data">			
+		<div id="envs-post-data">
 		</div>
 
 		<?php the_content(); ?>
