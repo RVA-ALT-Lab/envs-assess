@@ -20,7 +20,8 @@ var gulpSequence = require('gulp-sequence');
 var replace = require('gulp-replace');
 var autoprefixer = require('autoprefixer');
 var webpackStream = require('webpack-stream')
-var webpack = require('webpack')
+var webpack = require('webpack');
+var webpackConfig = require('./webpack.config.js');
 
 // Configuration file to keep your code DRY
 var cfg = require('./gulpconfig.json');
@@ -53,7 +54,8 @@ gulp.task('sass', function() {
 // Starts watcher. Watcher runs gulp sass task on changes
 gulp.task('watch', function() {
 	gulp.watch(`${paths.sass}/**/*.scss`, gulp.series('styles'));
-	gulp.watch(`${paths.dev}/js/**/*.js`,gulp.series('scripts'));
+  gulp.watch(`${paths.dev}/js/**/*.js`,gulp.series('scripts'));
+  gulp.watch(`${paths.dev}/js/**/*.vue`,gulp.series('scripts'));
 	//Inside the watch task.
 	gulp.watch(`${paths.imgsrc}/**`, gulp.series('imagemin-watch'));
 });
@@ -159,14 +161,7 @@ gulp.task('scripts', function() {
 				presets: ['@babel/preset-env']
 			}
     ))
-    .pipe(webpackStream({
-      entry:{
-        app: `${paths.dev}/js/envs-assess.js`
-      },
-      output: {
-        filename:'[name].js'
-      }
-    }), webpack, function(err, stats){})
+    .pipe(webpackStream(webpackConfig), webpack, function(err, stats){})
 		// .pipe(concat('theme.min.js'))
 		// .pipe(uglify())
 		.pipe(gulp.dest(paths.js));

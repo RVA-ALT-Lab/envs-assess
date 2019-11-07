@@ -22,6 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
 			<main class="site-main" id="main">
+      <div id="assessment-app"></div>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 

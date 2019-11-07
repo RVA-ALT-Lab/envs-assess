@@ -20,12 +20,20 @@ console.log(postId)
 envsBasicContent(baseUrl, postId)
 ///wp-json/wp/v2/posts/123
 
+// function envsBasicContent(baseUrl, postId){
+// 	let url = baseUrl+'/wp-json/wp/v2/posts/'+ postId;
+// 	let destination =  document.getElementById('to-eval')
+// 	  jQuery.get( url, function( data ) {
+// 	  	console.log(data)
+// 	  	destination.innerHTML = '<h2>' + data.title.rendered + '</h2>' + data.content.rendered
+// 	  	})
+//   }
 
-function envsBasicContent(baseUrl, postId){
+export const envsBasicContent =  function(baseUrl, postId){
 	let url = baseUrl+'/wp-json/wp/v2/posts/'+ postId;
 	let destination =  document.getElementById('to-eval')
 	  jQuery.get( url, function( data ) {
 	  	console.log(data)
 	  	destination.innerHTML = '<h2>' + data.title.rendered + '</h2>' + data.content.rendered
 	  	})
-	}
+  };
