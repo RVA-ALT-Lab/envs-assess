@@ -1,7 +1,7 @@
 import Countable from 'countable';
 import {rate, grade } from 'flesch-kincaid';
 
-console.log('envs-assess')
+console.log('webpack still working')
 console.log(port.url)
 
 let portfolioJson = port.url+'/wp-json'
