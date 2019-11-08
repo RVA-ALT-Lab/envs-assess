@@ -7,6 +7,7 @@
         :is-full-page="true"
       ></loading>
       <div class="col-lg-4">
+        <student-info></student-info>
         <biography-modal></biography-modal>
       </div>
       <div class="col-lg-8">
@@ -21,6 +22,7 @@
 import { mapGetters } from 'vuex'
 import PostsNavigation from '../components/PostsNavigation'
 import Post from '../components/Post'
+import StudentInfo from '../components/StudentInfo'
 import BiographyModal from '../components/modals/BiographyModal'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
@@ -36,6 +38,7 @@ export default {
     PostsNavigation,
     Post,
     BiographyModal,
+    StudentInfo,
     Loading
   },
   computed: {

@@ -1,6 +1,6 @@
 <template>
   <div>
-   <div class="card" style="width: 18rem;">
+   <div class="card">
      <div class="card-header">
        {{post.id}}
      </div>

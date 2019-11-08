@@ -8,6 +8,7 @@ const store = new Vuex.Store({
   state: {
     _isLoading: false,
     _portfolioBaseURL: null,
+    _student: null,
     _posts: [],
     _totalPosts: null,
     _totalPages: null,
@@ -16,6 +17,7 @@ const store = new Vuex.Store({
   getters: {
     isLoading: state => state._isLoading,
     portfolioBaseURL: state => state._portfolioBaseURL,
+    student: state => state._student,
     posts: state => state._posts,
     totalPosts: state => state._totalPosts,
     totalPages: state => state._totalPages,
@@ -27,6 +29,9 @@ const store = new Vuex.Store({
     },
     setPortfolioBaseURL (state, url) {
       state._portfolioBaseURL = url
+    },
+    setStudent (state, student) {
+      state._student = student
     },
     setPosts (state, posts) {
       state._posts = posts
@@ -48,17 +53,25 @@ const store = new Vuex.Store({
     async setPortfolioBaseURL (context, url) {
       context.commit('setPortfolioBaseURL', url)
     },
-    async setInitialPostData (context, url) {
+    async setInitialStoreData (context, url) {
       context.commit('toggleLoadingStatus')
       console.log(url)
-      const wordpressResponse = await WordPressService.getPostsByPage(url)
-      const posts = wordpressResponse.data
-      context.commit('setPosts', posts)
+      const responses = await Promise.all([
+        WordPressService.getPostsByPage(this.getters.portfolioBaseURL),
+        WordPressService.getStudentInformation(this.getters.portfolioBaseURL)
+      ])
 
-      const totalPosts = wordpressResponse.headers['x-wp-total']
+      const postsResponse = responses[0]
+      context.commit('setPosts', postsResponse.data)
+
+      const studentInfoResponse = responses[1]
+      console.log(studentInfoResponse)
+      context.commit('setStudent', studentInfoResponse.student)
+
+      const totalPosts = postsResponse.headers['x-wp-total']
       context.commit('setTotalPosts', totalPosts)
 
-      const totalPages = wordpressResponse.headers['x-wp-totalpages']
+      const totalPages = postsResponse.headers['x-wp-totalpages']
       context.commit('setTotalPages', totalPages)
       context.commit('toggleLoadingStatus')
     },
