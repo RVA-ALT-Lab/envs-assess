@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import WordPressService from './services/WordPressService'
 
 Vue.config.devtools = true;
 
@@ -17,11 +18,9 @@ const app = new Vue({
   router,
   components: { App },
   template: '<App/>',
-  created () {
-    //dispatch action here to load portfolio base url
-    this.$store.dispatch('setPortfolioBaseURL', window.PORTFOLIO_ASSESSMENT.URL)
-    //dispatch action here to load the first set of portfolio entries
-    console.log('This is getting created')
+  async created () {
+    await this.$store.dispatch('setPortfolioBaseURL', window.PORTFOLIO_ASSESSMENT.URL)
+    await this.$store.dispatch('setInitialPostData', window.PORTFOLIO_ASSESSMENT.URL)
   }
 })
 
