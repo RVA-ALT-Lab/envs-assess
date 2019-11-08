@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import PortfolioEntriesPage from '../pages/PortfolioEntriesPage'
+import PostsPage from '../pages/PostsPage'
 
 Vue.use(VueRouter)
 
@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: PortfolioEntriesPage
+    component: PostsPage
   }
 ]
 
