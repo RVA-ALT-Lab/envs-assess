@@ -408,6 +408,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/js/components/Post.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/js/components/Post.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'Post',\n  props: {\n    post: {\n      type: Object,\n      required: true\n    }\n  },\n\n  data() {\n    return {};\n  },\n\n  computed: {},\n  methods: {}\n});\n\n//# sourceURL=webpack:///./src/js/components/Post.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/js/components/PostsNavigation.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/js/components/PostsNavigation.vue?vue&type=script&lang=js& ***!
@@ -420,6 +432,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vuex
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/js/components/modals/BiographyModal.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/js/components/modals/BiographyModal.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'BiographyModal',\n\n  data() {\n    return {};\n  },\n\n  computed: {},\n  methods: {}\n});\n\n//# sourceURL=webpack:///./src/js/components/modals/BiographyModal.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/js/pages/PostsPage.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/js/pages/PostsPage.vue?vue&type=script&lang=js& ***!
@@ -428,7 +452,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vuex
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm.js\");\n/* harmony import */ var _components_PostsNavigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PostsNavigation */ \"./src/js/components/PostsNavigation.vue\");\n//\n//\n//\n//\n//\n//\n//\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'PostsPage',\n\n  data() {\n    return {\n      appData: 'This is portfolio stuff'\n    };\n  },\n\n  components: {\n    PostsNavigation: _components_PostsNavigation__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n  },\n  computed: { ...Object(vuex__WEBPACK_IMPORTED_MODULE_0__[\"mapGetters\"])(['posts'])\n  }\n});\n\n//# sourceURL=webpack:///./src/js/pages/PostsPage.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm.js\");\n/* harmony import */ var _components_PostsNavigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PostsNavigation */ \"./src/js/components/PostsNavigation.vue\");\n/* harmony import */ var _components_Post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Post */ \"./src/js/components/Post.vue\");\n/* harmony import */ var _components_modals_BiographyModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/modals/BiographyModal */ \"./src/js/components/modals/BiographyModal.vue\");\n//\n//\n//\n//\n//\n//\n//\n//\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'PostsPage',\n\n  data() {\n    return {\n      appData: 'This is portfolio stuff'\n    };\n  },\n\n  components: {\n    PostsNavigation: _components_PostsNavigation__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n    Post: _components_Post__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n    BiographyModal: _components_modals_BiographyModal__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n  },\n  computed: { ...Object(vuex__WEBPACK_IMPORTED_MODULE_0__[\"mapGetters\"])(['posts'])\n  }\n});\n\n//# sourceURL=webpack:///./src/js/pages/PostsPage.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -477,6 +501,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/components/Post.vue?vue&type=template&id=6ea0296c&":
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/js/components/Post.vue?vue&type=template&id=6ea0296c& ***!
+  \*************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"div\", [\n    _c(\"div\", { staticClass: \"card\", staticStyle: { width: \"18rem\" } }, [\n      _c(\"div\", { staticClass: \"card-header\" }, [\n        _vm._v(\"\\n     \" + _vm._s(_vm.post.id) + \"\\n   \")\n      ]),\n      _vm._v(\" \"),\n      _c(\"div\", { staticClass: \"card-body\" }, [\n        _c(\"h5\", { staticClass: \"card-title\" }, [\n          _vm._v(_vm._s(_vm.post.title.rendered))\n        ]),\n        _vm._v(\" \"),\n        _c(\"p\", { staticClass: \"card-text\" }, [\n          _c(\"span\", {\n            domProps: { innerHTML: _vm._s(_vm.post.excerpt.rendered) }\n          })\n        ]),\n        _vm._v(\" \"),\n        _c(\"a\", { staticClass: \"btn btn-primary\", attrs: { href: \"#\" } }, [\n          _vm._v(\"Read More\")\n        ])\n      ])\n    ])\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/js/components/Post.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/components/PostsNavigation.vue?vue&type=template&id=81b252aa&":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/js/components/PostsNavigation.vue?vue&type=template&id=81b252aa& ***!
@@ -489,6 +525,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/components/modals/BiographyModal.vue?vue&type=template&id=180cede7&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/js/components/modals/BiographyModal.vue?vue&type=template&id=180cede7& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _vm._m(0)\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"div\", [\n      _c(\n        \"button\",\n        {\n          staticClass: \"btn btn-primary\",\n          attrs: {\n            type: \"button\",\n            \"data-toggle\": \"modal\",\n            \"data-target\": \"#bio-modal\"\n          }\n        },\n        [_vm._v(\"\\n                See Bio Snapshot\\n  \")]\n      ),\n      _vm._v(\" \"),\n      _c(\n        \"div\",\n        {\n          staticClass: \"modal fade\",\n          attrs: {\n            id: \"bio-modal\",\n            tabindex: \"-1\",\n            role: \"dialog\",\n            \"aria-labelledby\": \"bioModalLabel\",\n            \"aria-hidden\": \"true\"\n          }\n        },\n        [\n          _c(\n            \"div\",\n            {\n              staticClass: \"modal-dialog modal-dialog-slideout\",\n              attrs: { role: \"document\" }\n            },\n            [\n              _c(\"div\", { staticClass: \"modal-content\" }, [\n                _c(\"div\", { staticClass: \"modal-header\" }, [\n                  _c(\n                    \"h2\",\n                    {\n                      staticClass: \"modal-title\",\n                      attrs: { id: \"bioModalLabel\" }\n                    },\n                    [_vm._v(\"Student Name\")]\n                  ),\n                  _vm._v(\" \"),\n                  _c(\n                    \"button\",\n                    {\n                      staticClass: \"close\",\n                      attrs: {\n                        type: \"button\",\n                        \"data-dismiss\": \"modal\",\n                        \"aria-label\": \"Close\"\n                      }\n                    },\n                    [\n                      _c(\"span\", { attrs: { \"aria-hidden\": \"true\" } }, [\n                        _vm._v(\"X\")\n                      ])\n                    ]\n                  )\n                ]),\n                _vm._v(\" \"),\n                _c(\"div\", { staticClass: \"modal-body\" }, [\n                  _c(\"img\", {\n                    attrs: {\n                      id: \"stu-photo\",\n                      src: \"\",\n                      alt: \"Student biography image.\"\n                    }\n                  }),\n                  _vm._v(\" \"),\n                  _c(\"div\", { attrs: { id: \"stu-grad\" } }),\n                  _vm._v(\" \"),\n                  _c(\"div\", { attrs: { id: \"stu-majors\" } }),\n                  _vm._v(\" \"),\n                  _c(\"div\", { attrs: { id: \"stu-minors\" } }),\n                  _vm._v(\" \"),\n                  _c(\"h3\", [_vm._v(\"General Portfolio Data\")]),\n                  _vm._v(\" \"),\n                  _c(\"div\", { attrs: { id: \"stu-page-count\" } }),\n                  _vm._v(\" \"),\n                  _c(\"div\", { attrs: { id: \"stu-post-count\" } }),\n                  _vm._v(\" \"),\n                  _c(\"div\", { attrs: { id: \"stu-created\" } }),\n                  _vm._v(\" \"),\n                  _c(\"div\", { attrs: { id: \"stu-last-update\" } })\n                ]),\n                _vm._v(\" \"),\n                _c(\"div\", { staticClass: \"modal-footer\" }, [\n                  _c(\n                    \"button\",\n                    {\n                      staticClass: \"btn btn-secondary\",\n                      attrs: { type: \"button\", \"data-dismiss\": \"modal\" }\n                    },\n                    [_vm._v(\"Close\")]\n                  )\n                ])\n              ])\n            ]\n          )\n        ]\n      )\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/js/components/modals/BiographyModal.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/PostsPage.vue?vue&type=template&id=c8f4baac&":
 /*!*************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/js/pages/PostsPage.vue?vue&type=template&id=c8f4baac& ***!
@@ -497,7 +545,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"div\",\n    [\n      _c(\"posts-navigation\"),\n      _vm._v(\" \"),\n      _vm._l(_vm.posts, function(post) {\n        return _c(\"div\", { key: post.id }, [_vm._v(_vm._s(post))])\n      })\n    ],\n    2\n  )\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/js/pages/PostsPage.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"div\",\n    [\n      _c(\"biography-modal\"),\n      _vm._v(\" \"),\n      _c(\"posts-navigation\"),\n      _vm._v(\" \"),\n      _vm._l(_vm.posts, function(post) {\n        return _c(\"post\", { key: post.id, attrs: { post: post } })\n      })\n    ],\n    2\n  )\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/js/pages/PostsPage.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -596,6 +644,42 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
+/***/ "./src/js/components/Post.vue":
+/*!************************************!*\
+  !*** ./src/js/components/Post.vue ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Post_vue_vue_type_template_id_6ea0296c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Post.vue?vue&type=template&id=6ea0296c& */ \"./src/js/components/Post.vue?vue&type=template&id=6ea0296c&\");\n/* harmony import */ var _Post_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Post.vue?vue&type=script&lang=js& */ \"./src/js/components/Post.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _Post_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _Post_vue_vue_type_template_id_6ea0296c___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _Post_vue_vue_type_template_id_6ea0296c___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"src/js/components/Post.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=webpack:///./src/js/components/Post.vue?");
+
+/***/ }),
+
+/***/ "./src/js/components/Post.vue?vue&type=script&lang=js&":
+/*!*************************************************************!*\
+  !*** ./src/js/components/Post.vue?vue&type=script&lang=js& ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_Post_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib!../../../node_modules/vue-loader/lib??vue-loader-options!./Post.vue?vue&type=script&lang=js& */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/js/components/Post.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_Post_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[\"default\"]); \n\n//# sourceURL=webpack:///./src/js/components/Post.vue?");
+
+/***/ }),
+
+/***/ "./src/js/components/Post.vue?vue&type=template&id=6ea0296c&":
+/*!*******************************************************************!*\
+  !*** ./src/js/components/Post.vue?vue&type=template&id=6ea0296c& ***!
+  \*******************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Post_vue_vue_type_template_id_6ea0296c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Post.vue?vue&type=template&id=6ea0296c& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/components/Post.vue?vue&type=template&id=6ea0296c&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Post_vue_vue_type_template_id_6ea0296c___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Post_vue_vue_type_template_id_6ea0296c___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./src/js/components/Post.vue?");
+
+/***/ }),
+
 /***/ "./src/js/components/PostsNavigation.vue":
 /*!***********************************************!*\
   !*** ./src/js/components/PostsNavigation.vue ***!
@@ -629,6 +713,42 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostsNavigation_vue_vue_type_template_id_81b252aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PostsNavigation.vue?vue&type=template&id=81b252aa& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/components/PostsNavigation.vue?vue&type=template&id=81b252aa&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostsNavigation_vue_vue_type_template_id_81b252aa___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostsNavigation_vue_vue_type_template_id_81b252aa___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./src/js/components/PostsNavigation.vue?");
+
+/***/ }),
+
+/***/ "./src/js/components/modals/BiographyModal.vue":
+/*!*****************************************************!*\
+  !*** ./src/js/components/modals/BiographyModal.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _BiographyModal_vue_vue_type_template_id_180cede7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BiographyModal.vue?vue&type=template&id=180cede7& */ \"./src/js/components/modals/BiographyModal.vue?vue&type=template&id=180cede7&\");\n/* harmony import */ var _BiographyModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BiographyModal.vue?vue&type=script&lang=js& */ \"./src/js/components/modals/BiographyModal.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _BiographyModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _BiographyModal_vue_vue_type_template_id_180cede7___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _BiographyModal_vue_vue_type_template_id_180cede7___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"src/js/components/modals/BiographyModal.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=webpack:///./src/js/components/modals/BiographyModal.vue?");
+
+/***/ }),
+
+/***/ "./src/js/components/modals/BiographyModal.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./src/js/components/modals/BiographyModal.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_BiographyModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib!../../../../node_modules/vue-loader/lib??vue-loader-options!./BiographyModal.vue?vue&type=script&lang=js& */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/js/components/modals/BiographyModal.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_BiographyModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[\"default\"]); \n\n//# sourceURL=webpack:///./src/js/components/modals/BiographyModal.vue?");
+
+/***/ }),
+
+/***/ "./src/js/components/modals/BiographyModal.vue?vue&type=template&id=180cede7&":
+/*!************************************************************************************!*\
+  !*** ./src/js/components/modals/BiographyModal.vue?vue&type=template&id=180cede7& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BiographyModal_vue_vue_type_template_id_180cede7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./BiographyModal.vue?vue&type=template&id=180cede7& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/components/modals/BiographyModal.vue?vue&type=template&id=180cede7&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BiographyModal_vue_vue_type_template_id_180cede7___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BiographyModal_vue_vue_type_template_id_180cede7___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./src/js/components/modals/BiographyModal.vue?");
 
 /***/ }),
 
