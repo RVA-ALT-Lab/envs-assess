@@ -20,7 +20,7 @@ const app = new Vue({
   template: '<App/>',
   async created () {
     await this.$store.dispatch('setPortfolioBaseURL', window.PORTFOLIO_ASSESSMENT.URL)
-    await this.$store.dispatch('setInitialPostData', window.PORTFOLIO_ASSESSMENT.URL)
+    await this.$store.dispatch('setInitialStoreData', window.PORTFOLIO_ASSESSMENT.URL)
   }
 })
 
