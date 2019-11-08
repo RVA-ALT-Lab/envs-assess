@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    _isLoading: false,
     _portfolioBaseURL: null,
     _posts: [],
     _totalPosts: null,
@@ -13,6 +14,7 @@ const store = new Vuex.Store({
     _currentPage: 1
   },
   getters: {
+    isLoading: state => state._isLoading,
     portfolioBaseURL: state => state._portfolioBaseURL,
     posts: state => state._posts,
     totalPosts: state => state._totalPosts,
@@ -20,6 +22,9 @@ const store = new Vuex.Store({
     currentPage: state => state._currentPage
   },
   mutations: {
+    toggleLoadingStatus (state) {
+      state._isLoading = !state._isLoading
+    },
     setPortfolioBaseURL (state, url) {
       state._portfolioBaseURL = url
     },
@@ -44,6 +49,7 @@ const store = new Vuex.Store({
       context.commit('setPortfolioBaseURL', url)
     },
     async setInitialPostData (context, url) {
+      context.commit('toggleLoadingStatus')
       console.log(url)
       const wordpressResponse = await WordPressService.getPostsByPage(url)
       const posts = wordpressResponse.data
@@ -54,20 +60,23 @@ const store = new Vuex.Store({
 
       const totalPages = wordpressResponse.headers['x-wp-totalpages']
       context.commit('setTotalPages', totalPages)
+      context.commit('toggleLoadingStatus')
     },
     async incrementPostPage (context, url) {
-      console.log(url)
+      context.commit('toggleLoadingStatus')
       context.commit('incrementCurrentPage')
       const wordpressResponse = await WordPressService.getPostsByPage(this.getters.portfolioBaseURL, this.getters.currentPage)
       const posts = wordpressResponse.data
       context.commit('setPosts', posts)
+      context.commit('toggleLoadingStatus')
     },
     async decrementPostPage (context, url) {
-      console.log(url)
+      context.commit('toggleLoadingStatus')
       context.commit('decrementCurrentPage')
       const wordpressResponse = await WordPressService.getPostsByPage(this.getters.portfolioBaseURL, this.getters.currentPage)
       const posts = wordpressResponse.data
       context.commit('setPosts', posts)
+      context.commit('toggleLoadingStatus')
     }
   }
 })
