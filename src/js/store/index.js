@@ -8,7 +8,7 @@ const store = new Vuex.Store({
   state: {
     _isLoading: false,
     _portfolioBaseURL: null,
-    _student: null,
+    _student: {},
     _posts: [],
     _totalPosts: null,
     _totalPages: null,
@@ -62,17 +62,14 @@ const store = new Vuex.Store({
       ])
 
       const postsResponse = responses[0]
-      context.commit('setPosts', postsResponse.data)
+      context.commit('setPosts', postsResponse.posts)
+      context.commit('setTotalPosts', postsResponse.totalPosts)
+      context.commit('setTotalPages', postsResponse.totalPages)
 
       const studentInfoResponse = responses[1]
       console.log(studentInfoResponse)
       context.commit('setStudent', studentInfoResponse.student)
 
-      const totalPosts = postsResponse.headers['x-wp-total']
-      context.commit('setTotalPosts', totalPosts)
-
-      const totalPages = postsResponse.headers['x-wp-totalpages']
-      context.commit('setTotalPages', totalPages)
       context.commit('toggleLoadingStatus')
     },
     async incrementPostPage (context, url) {

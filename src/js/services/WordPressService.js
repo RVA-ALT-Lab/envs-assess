@@ -1,4 +1,5 @@
 import axios from 'axios'
+import LangaugeAnalysisService from '../services/LanguageAnalysisService'
 export default class WordPressService {
 
   static async getPostsByPage(url, page = null) {
@@ -6,7 +7,12 @@ export default class WordPressService {
     const postsUrl = page !== null ? `${url}/wp-json/wp/v2/posts?page=${page}` : `${url}/wp-json/wp/v2/posts`
     try {
       const response = await axios.get(postsUrl)
-      return response
+      const postsResponse = {
+        posts: response.data,
+        totalPosts: response.headers['x-wp-total'],
+        totalPages: response.headers['x-wp-totalpages']
+      }
+      return postsResponse
     } catch(error) {
       return error
     }
@@ -47,6 +53,13 @@ export default class WordPressService {
       return error
     }
   }
+
+  reformatWordPressPosts(posts) {
+    return posts.map(post => {
+
+    })
+  }
+
 
 
 }
