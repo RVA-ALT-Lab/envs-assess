@@ -7,7 +7,16 @@
       <div class="card-body">
         <h5 class="card-title">{{post.title.rendered}}</h5>
         <p class="card-text"><span v-html="post.excerpt.rendered"></span></p>
-        <a href="#" class="btn btn-primary">Read More</a>
+        <p>Grade: {{post.fleschKincaid.grade}}</p>
+        <p>Rate: {{post.fleschKincaid.rate}}</p>
+        <p>Sentences: {{post.frequencyCounts.sentences.length}}</p>
+        <p>tokens.word: {{post.frequencyCounts.tokens.word}}</p>
+        <p>tokens.number: {{post.frequencyCounts.tokens.number}}</p>
+        <p>tokens.emoticon: {{post.frequencyCounts.tokens.emoticon}}</p>
+        <p>tokens.url: {{post.frequencyCounts.tokens.url}}</p>
+        <p>tokens.symbol: {{post.frequencyCounts.tokens.symbol}}</p>
+        <p>tokens.punctuation: {{post.frequencyCounts.tokens.punctuation}}</p>
+
       </div>
     </div>
   </div>
