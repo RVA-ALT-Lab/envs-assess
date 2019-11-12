@@ -1,5 +1,5 @@
 import axios from 'axios'
-import LangaugeAnalysisService from '../services/LanguageAnalysisService'
+import LanguageAnalysisService from '../services/LanguageAnalysisService'
 export default class WordPressService {
 
   static async getPostsByPage(url, page = null) {
@@ -8,7 +8,11 @@ export default class WordPressService {
     try {
       const response = await axios.get(postsUrl)
       const postsResponse = {
-        posts: response.data,
+        posts: response.data.map(post => {
+          post.fleschKincaid = LanguageAnalysisService.getFleschKincaid(post.content.rendered)
+          post.frequencyCounts = LanguageAnalysisService.getFrequencyCounts(post.content.rendered)
+          return post
+        }),
         totalPosts: response.headers['x-wp-total'],
         totalPages: response.headers['x-wp-totalpages']
       }

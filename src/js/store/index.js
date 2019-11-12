@@ -76,7 +76,7 @@ const store = new Vuex.Store({
       context.commit('toggleLoadingStatus')
       context.commit('incrementCurrentPage')
       const wordpressResponse = await WordPressService.getPostsByPage(this.getters.portfolioBaseURL, this.getters.currentPage)
-      const posts = wordpressResponse.data
+      const posts = wordpressResponse.posts
       context.commit('setPosts', posts)
       context.commit('toggleLoadingStatus')
     },
@@ -84,7 +84,7 @@ const store = new Vuex.Store({
       context.commit('toggleLoadingStatus')
       context.commit('decrementCurrentPage')
       const wordpressResponse = await WordPressService.getPostsByPage(this.getters.portfolioBaseURL, this.getters.currentPage)
-      const posts = wordpressResponse.data
+      const posts = wordpressResponse.posts
       context.commit('setPosts', posts)
       context.commit('toggleLoadingStatus')
     }
