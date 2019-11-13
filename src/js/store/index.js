@@ -35,6 +35,9 @@ const store = new Vuex.Store({
     setStudent (state, student) {
       state._student = student
     },
+    setCategories (state, categories) {
+      state._categories = categories
+    },
     setPosts (state, posts) {
       state._posts = posts
     },
@@ -63,7 +66,8 @@ const store = new Vuex.Store({
       console.log(url)
       const responses = await Promise.all([
         WordPressService.getPostsByPage(this.getters.portfolioBaseURL),
-        WordPressService.getStudentInformation(this.getters.portfolioBaseURL)
+        WordPressService.getStudentInformation(this.getters.portfolioBaseURL),
+        WordPressService.getCategories(this.getters.portfolioBaseURL)
       ])
 
       const postsResponse = responses[0]
@@ -74,6 +78,9 @@ const store = new Vuex.Store({
       const studentInfoResponse = responses[1]
       console.log(studentInfoResponse)
       context.commit('setStudent', studentInfoResponse.student)
+
+      const categoriesResponse = responses[2]
+      context.commit('setCategories', categoriesResponse)
 
       context.commit('toggleLoadingStatus')
     },

@@ -22,6 +22,18 @@ export default class WordPressService {
     }
   }
 
+  static async getCategories(baseUrl) {
+
+    const categoriesUrl = `${baseUrl}/wp-json/wp/v2/categories`
+    try {
+      const response = await axios.get(categoriesUrl)
+      const categoriesResponse = response.data
+      return categoriesResponse
+    } catch(error) {
+      return error
+    }
+  }
+
   static async getStudentInformation (url) {
     // const baseUrl = `${url}/wp-json`
     // const response = await axios.get(baseUrl)
