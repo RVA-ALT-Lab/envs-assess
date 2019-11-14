@@ -9,6 +9,7 @@
       <div class="col-lg-4">
         <student-info></student-info>
         <biography-modal></biography-modal>
+        <category-filter></category-filter>
       </div>
       <div class="col-lg-8">
         <posts-navigation></posts-navigation>
@@ -24,6 +25,7 @@ import PostsNavigation from '../components/PostsNavigation'
 import Post from '../components/Post'
 import StudentInfo from '../components/StudentInfo'
 import BiographyModal from '../components/modals/BiographyModal'
+import CategoryFilter from '../components/CategoryFilter'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
 
@@ -39,6 +41,7 @@ export default {
     Post,
     BiographyModal,
     StudentInfo,
+    CategoryFilter,
     Loading
   },
   computed: {
