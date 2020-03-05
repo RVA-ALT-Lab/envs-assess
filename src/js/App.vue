@@ -1,5 +1,5 @@
 <template>
-  <div id="aws-workbench-app">
+  <div id="assessment-app-inner">
     <router-view/>
   </div>
 </template>

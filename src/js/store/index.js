@@ -8,11 +8,12 @@ const store = new Vuex.Store({
   state: {
     _isLoading: false,
     _portfolioBaseURL: null,
-    _student: null,
+    _student: {},
     _posts: [],
     _totalPosts: null,
     _totalPages: null,
-    _currentPage: 1
+    _currentPage: 1,
+    _categories: {}
   },
   getters: {
     isLoading: state => state._isLoading,
@@ -21,7 +22,8 @@ const store = new Vuex.Store({
     posts: state => state._posts,
     totalPosts: state => state._totalPosts,
     totalPages: state => state._totalPages,
-    currentPage: state => state._currentPage
+    currentPage: state => state._currentPage,
+    categories: state => state._categories
   },
   mutations: {
     toggleLoadingStatus (state) {
@@ -33,6 +35,9 @@ const store = new Vuex.Store({
     setStudent (state, student) {
       state._student = student
     },
+    setCategories (state, categories) {
+      state._categories = categories
+    },
     setPosts (state, posts) {
       state._posts = posts
     },
@@ -41,6 +46,9 @@ const store = new Vuex.Store({
     },
     setTotalPosts (state, totalPosts) {
       state._totalPosts = totalPosts
+    },
+    setCurrentPage (state, currentPage) {
+      state._currentPage = currentPage
     },
     incrementCurrentPage (state) {
       state._currentPage++
@@ -58,28 +66,37 @@ const store = new Vuex.Store({
       console.log(url)
       const responses = await Promise.all([
         WordPressService.getPostsByPage(this.getters.portfolioBaseURL),
-        WordPressService.getStudentInformation(this.getters.portfolioBaseURL)
+        WordPressService.getStudentInformation(this.getters.portfolioBaseURL),
+        WordPressService.getCategories(this.getters.portfolioBaseURL)
       ])
 
       const postsResponse = responses[0]
-      context.commit('setPosts', postsResponse.data)
+      context.commit('setPosts', postsResponse.posts)
+      context.commit('setTotalPosts', postsResponse.totalPosts)
+      context.commit('setTotalPages', postsResponse.totalPages)
 
       const studentInfoResponse = responses[1]
       console.log(studentInfoResponse)
       context.commit('setStudent', studentInfoResponse.student)
 
-      const totalPosts = postsResponse.headers['x-wp-total']
-      context.commit('setTotalPosts', totalPosts)
+      const categoriesResponse = responses[2]
+      context.commit('setCategories', categoriesResponse)
 
-      const totalPages = postsResponse.headers['x-wp-totalpages']
-      context.commit('setTotalPages', totalPages)
+      context.commit('toggleLoadingStatus')
+    },
+    async setPostPage (context, postPage) {
+      context.commit('toggleLoadingStatus')
+      context.commit('setCurrentPage', postPage)
+      const wordpressResponse = await WordPressService.getPostsByPage(this.getters.portfolioBaseURL, this.getters.currentPage)
+      const posts = wordpressResponse.posts
+      context.commit('setPosts', posts)
       context.commit('toggleLoadingStatus')
     },
     async incrementPostPage (context, url) {
       context.commit('toggleLoadingStatus')
       context.commit('incrementCurrentPage')
       const wordpressResponse = await WordPressService.getPostsByPage(this.getters.portfolioBaseURL, this.getters.currentPage)
-      const posts = wordpressResponse.data
+      const posts = wordpressResponse.posts
       context.commit('setPosts', posts)
       context.commit('toggleLoadingStatus')
     },
@@ -87,7 +104,7 @@ const store = new Vuex.Store({
       context.commit('toggleLoadingStatus')
       context.commit('decrementCurrentPage')
       const wordpressResponse = await WordPressService.getPostsByPage(this.getters.portfolioBaseURL, this.getters.currentPage)
-      const posts = wordpressResponse.data
+      const posts = wordpressResponse.posts
       context.commit('setPosts', posts)
       context.commit('toggleLoadingStatus')
     }
