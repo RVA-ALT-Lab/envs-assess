@@ -8,12 +8,25 @@
         <p>Grade: {{post.fleschKincaid.grade}}</p>
         <p>Rate: {{post.fleschKincaid.rate}}</p>
         <p>Sentences: {{post.frequencyCounts.sentences.length}}</p>
-        <p>tokens.word: {{post.frequencyCounts.tokens.word}}</p>
-        <p>tokens.number: {{post.frequencyCounts.tokens.number}}</p>
-        <p>tokens.emoticon: {{post.frequencyCounts.tokens.emoticon}}</p>
-        <p>tokens.url: {{post.frequencyCounts.tokens.url}}</p>
-        <p>tokens.symbol: {{post.frequencyCounts.tokens.symbol}}</p>
-        <p>tokens.punctuation: {{post.frequencyCounts.tokens.punctuation}}</p>
+        <p>Total Words: {{post.frequencyCounts.tokens.words.count}}</p>
+        <a :href="`#wordsCollapse${post.id}`" data-toggle="collapse" class="btn btn-primary">View all 'word' tokens</a>
+        <div class="collapse" :id="`wordsCollapse${post.id}`">
+          <table class="table">
+            <tr v-for="(value, word) in post.frequencyCounts.tokens.words.frequency" :key="`${word}:${value}`">
+              <td>{{word}}</td>
+              <td>{{value}}</td>
+            </tr>
+          </table>
+        </div>
+        <p>Total URLs: {{post.frequencyCounts.tokens.urls.count}}</p>
+        <a :href="`#urlCollapse${post.id}`" data-toggle="collapse" class="btn btn-primary">View all 'url' tokens</a>
+        <div class="collapse" :id="`urlCollapse${post.id}`">
+          <table class="table">
+            <tr v-for="(url, index) in post.frequencyCounts.tokens.urls.tokens" :key="`${url}:${index}`">
+              <td>{{url}}</td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>
